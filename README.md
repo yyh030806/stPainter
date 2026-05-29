@@ -146,7 +146,20 @@ python test_stPainter.py \
 ```
 
 ## 📓 Detailed Tutorial
-TODO
+
+A step-by-step Jupyter notebook is provided at [`stPainter_tutorial.ipynb`](stPainter_tutorial.ipynb). It walks through the same pipeline as `impute_stPainter.py` but inline, so you can inspect intermediate tensors and adapt each stage to your own data.
+
+The notebook covers:
+
+1. **Setup** — make the repo root importable and pick a device (GPU / CPU).
+2. **Configuration** — build the model & sampling args inline (no `argparse`); toggle between the 50- and 100-dim checkpoints in one place.
+3. **Load Pretrained Models** — instantiate `VAE` (`scvi.module`) and `GiT`, then restore weights via `VAEModule.load_from_checkpoint` / `DiffusionModule.load_from_checkpoint`.
+4. **Load Spatial Data** — wrap an `.h5ad` file with `STDataset`, expose the gene impute mask, cell / gene names, and (optional) cell-type annotations.
+5. **Run Imputation** — call `DiffusionModule.impute(...)` to obtain `(X_imputed, Z_latent)`: the imputed gene matrix and the enhanced latent embedding.
+6. **Inspect Results** — compare a marker gene (e.g. `EPCAM`) before vs. after imputation, and visualize the enhanced latent with UMAP.
+7. **Save Outputs** — write the imputed `.h5ad` (with `layers['imputed']` and `obsm['latent']`) — equivalent to the CLI output.
+
+The notebook uses the small demo file `data/processed/st_COAD_demo.h5ad`, so it runs end-to-end in a few minutes on a single GPU. To swap in a different cancer, change `ST_PATH` and `args.cancer_type` in §2.
 
 ## 🔥 Model Training
 
