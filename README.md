@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10-green)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.8-ee4c2c)](https://pytorch.org/)
-[![Paper](https://img.shields.io/badge/Paper-bioRxiv-yellow)](TODO)
+[![Paper](https://img.shields.io/badge/Paper-bioRxiv-yellow)](https://www.biorxiv.org/content/10.64898/2026.02.11.704553v1)
 
 This repository contains the official implementation and tutorial for **stPainter**.
 
@@ -182,12 +182,12 @@ python train_diffusion.py \
 If you find this work useful in your research, please consider citing:
 
 ```bibtex
-@article{stpainter2026,
-  title={Enhancing pan-cancer spatial transcriptomics at single-cell resolution with stPainter},
-  author={TODO},
-  journal={TODO},
-  year={2026},
-  url={TODO}
+@article {Yang2026.02.11.704553,
+	author = {Yang, Yuhang and Luo, Yiming and Zhang, Kai and Zhang, Zaixi and Peng, Haoxin and Cao, Chenlin and Liu, Qi and Ma, Bin and Chen, Yang and Shen, Lin and Chen, Enhong},
+	title = {Enhancing Pan-cancer Spatial Transcriptomics at Single-cell Resolution with stPainter},
+	year = {2026},
+	doi = {10.64898/2026.02.11.704553},
+	journal = {bioRxiv}
 }
 ```
 
