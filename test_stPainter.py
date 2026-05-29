@@ -135,7 +135,7 @@ def main(args):
     )
     
     # Load checkpoints
-    device = f"cuda:{args.devices[0]}"
+    device = f"cuda:{args.devices[0]}" if torch.cuda.is_available() else "cpu"
         
     if not args.vae_checkpoint:
         raise ValueError("VAE checkpoint required.")

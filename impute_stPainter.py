@@ -38,7 +38,7 @@ def main(args):
     )
     
     # pl module
-    device = f"cuda:{args.devices[0]}"
+    device = f"cuda:{args.devices[0]}" if torch.cuda.is_available() else "cpu"
     
     if  not args.vae_checkpoint:
         raise ValueError("Please provide a pretrained vae checkpoint.")
